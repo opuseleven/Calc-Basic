@@ -1,8 +1,10 @@
+import styles from '../styles/Components.module.css';
+
 function SubtractButton() {
 
   return (
-    <div>
-      <button>-</button>
+    <div className={styles.subtractbutton}>
+      <button className={styles.button}>-</button>
     </div>
   )
 }

@@ -1,8 +1,10 @@
+import styles from '../styles/Components.module.css';
+
 function DivideButton() {
 
   return (
-    <div>
-      <button>/</button>
+    <div className={styles.dividebutton}>
+      <button className={styles.button}>/</button>
     </div>
   )
 }

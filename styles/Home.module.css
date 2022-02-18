@@ -12,6 +12,18 @@
   align-items: center;
 }
 
+.calculatorcontainer {
+  border-style: solid;
+  border-radius: 8px;
+  border-color: black;
+  display: flex;
+  flex-direction: column;
+}
+
+.buttonscontainer {
+  display: grid;
+}
+
 .footer {
   display: flex;
   flex: 1;

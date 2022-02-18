@@ -1,7 +1,9 @@
+import styles from '../styles/Components.module.css';
+
 function ViewScreen({ number }) {
 
   return (
-    <div>
+    <div className={styles.viewscreen}>
       <h2>
         {number}
       </h2>

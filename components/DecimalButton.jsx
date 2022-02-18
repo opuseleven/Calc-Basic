@@ -1,8 +1,10 @@
+import styles from '../styles/Components.module.css';
+
 function DecimalButton() {
 
   return (
-    <div>
-      <button>.</button>
+    <div className={styles.decimalbutton}>
+      <button className={styles.button}>.</button>
     </div>
   )
 }

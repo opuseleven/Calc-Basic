@@ -1,8 +1,10 @@
+import styles from '../styles/Components.module.css';
+
 function AddButton() {
 
   return (
-    <div>
-      <button>+</button>
+    <div className={styles.addbutton}>
+      <button className={styles.button}>+</button>
     </div>
   )
 }
