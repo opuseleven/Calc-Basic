@@ -1,6 +1,6 @@
 function handleClearClick(viewedNumber: number, sign: string,
   setViewedNumber: React.Dispatch<React.SetStateAction<number>>, setStoredNumber: React.Dispatch<React.SetStateAction<number>>,
-  setSign: React.Dispatch<React.SetStateAction<string>>) {
+  setSign: React.Dispatch<React.SetStateAction<string>>, setNegative: React.Dispatch<React.SetStateAction<boolean>>) {
 
   if (viewedNumber !== 0) {
     setViewedNumber(0);
@@ -11,6 +11,6 @@ function handleClearClick(viewedNumber: number, sign: string,
       setStoredNumber(0);
     }
   }
-
+  setNegative(false);
 }
 export { handleClearClick };
