@@ -1,10 +1,10 @@
 import styles from '../styles/Components.module.css';
 
-function MultiplyButton() {
+function MultiplyButton({ handleClick }) {
 
   return (
     <div className={styles.multiplybutton}>
-      <button className={styles.button}>x</button>
+      <button className={styles.button} onClick={handleClick}>x</button>
     </div>
   )
 }

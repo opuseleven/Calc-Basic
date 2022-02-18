@@ -1,10 +1,10 @@
 import styles from '../styles/Components.module.css';
 
-function SubtractButton() {
+function SubtractButton({ handleClick }) {
 
   return (
     <div className={styles.subtractbutton}>
-      <button className={styles.button}>-</button>
+      <button className={styles.button} onClick={handleClick}>-</button>
     </div>
   )
 }

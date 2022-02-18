@@ -1,10 +1,10 @@
 import styles from '../styles/Components.module.css';
 
-function ZeroButton() {
+function ZeroButton({ handleClick }) {
 
   return (
     <div className={styles.zerobutton}>
-      <button className={styles.button}>0</button>
+      <button className={styles.button} onClick={handleClick}>0</button>
     </div>
   )
 }

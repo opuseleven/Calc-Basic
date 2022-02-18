@@ -1,10 +1,10 @@
 import styles from '../styles/Components.module.css';
 
-function NegativeButton() {
+function NegativeButton({ handleClick }) {
 
   return (
     <div className={styles.negativebutton}>
-      <button className={styles.button}>+/-</button>
+      <button className={styles.button} onClick={handleClick}>+/-</button>
     </div>
   )
 }
