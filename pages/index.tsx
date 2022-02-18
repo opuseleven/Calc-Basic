@@ -4,7 +4,7 @@ import styles from '../styles/Home.module.css';
 import { useState } from 'react';
 import { ViewScreen, ClearButton, NegativeButton, DivideButton, NumberButton } from '../components';
 import { MultiplyButton, SubtractButton, AddButton, ZeroButton, DecimalButton, EqualsButton } from '../components';
-import { handleNumberClick } from '../services';
+import { handleNumberClick, handleClearClick } from '../services';
 
 const Home: NextPage = () => {
 
@@ -30,7 +30,7 @@ const Home: NextPage = () => {
           <ViewScreen number={viewedNumber}/>
 
           <div className={styles.buttonscontainer}>
-            <ClearButton />
+            <ClearButton handleClick={() => handleClearClick(viewedNumber, sign, setViewedNumber, setStoredNumber, setSign)} />
             <NegativeButton />
             <DivideButton />
             <NumberButton number={7} handleClick={() => setViewedNumber(handleNumberClick(viewedNumber, 7))} />
