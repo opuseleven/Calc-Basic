@@ -1,10 +1,11 @@
 import Head from 'next/head';
+import type { NextPage } from 'next';
 import styles from '../styles/Home.module.css';
 import { useState } from 'react';
 import { ViewScreen, ClearButton, NegativeButton, DivideButton, NumberButton } from '../components';
 import { MultiplyButton, SubtractButton, AddButton, ZeroButton, DecimalButton, EqualsButton } from '../components';
 
-export default function Home() {
+const Home: NextPage = () => {
 
   const [viewedNumber, setViewedNumber] = useState(0);
   const [storedNumber, setStoredNumber] = useState(0);
@@ -56,3 +57,4 @@ export default function Home() {
     </div>
   )
 }
+export default Home;
