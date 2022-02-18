@@ -1,6 +1,6 @@
 function MultiplyButton() {
 
-  return(
+  return (
     <div>
       <button>x</button>
     </div>

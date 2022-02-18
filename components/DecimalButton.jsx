@@ -1,9 +1,9 @@
 function DecimalButton() {
 
-  return(
+  return (
     <div>
       <button>.</button>
     </div>
   )
 }
-export * from { DecimalButton };
+export { DecimalButton };

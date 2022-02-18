@@ -1,6 +1,6 @@
 function EqualsButton() {
 
-  return(
+  return (
     <div>
       <button>=</button>
     </div>

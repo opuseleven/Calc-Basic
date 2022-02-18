@@ -1,6 +1,6 @@
 function AddButton() {
 
-  return(
+  return (
     <div>
       <button>+</button>
     </div>

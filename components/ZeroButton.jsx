@@ -1,6 +1,6 @@
 function ZeroButton() {
 
-  return(
+  return (
     <div>
       <button>0</button>
     </div>

@@ -1,10 +1,10 @@
 
 
-function NumberButton({ number, handleClick }) {
+function NumberButton({ number }) {
 
   return (
     <div>
-      <button onClick={handleClick}>{number}</button>
+      <button>{number}</button>
     </div>
   )
 }

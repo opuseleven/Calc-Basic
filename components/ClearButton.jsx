@@ -1,4 +1,4 @@
-function ClearButton({handleClick}){
+function ClearButton() {
 
   return (
     <div>
