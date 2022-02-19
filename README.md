@@ -1,4 +1,4 @@
-#Calc-Basic
+# Calc-Basic
 
 A basic calculator web application built with ReactJS using NextJS & Typescript.
 
