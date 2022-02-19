@@ -4,7 +4,7 @@ function AddButton({ handleClick }) {
 
   return (
     <div className={styles.addbutton}>
-      <button className={styles.button} onClick={handleClick}>+</button>
+      <button className={styles.signbutton} onClick={handleClick}>+</button>
     </div>
   )
 }

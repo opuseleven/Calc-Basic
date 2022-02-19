@@ -4,7 +4,7 @@ function MultiplyButton({ handleClick }) {
 
   return (
     <div className={styles.multiplybutton}>
-      <button className={styles.button} onClick={handleClick}>x</button>
+      <button className={styles.signbutton} onClick={handleClick}>x</button>
     </div>
   )
 }

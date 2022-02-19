@@ -4,7 +4,7 @@ function SubtractButton({ handleClick }) {
 
   return (
     <div className={styles.subtractbutton}>
-      <button className={styles.button} onClick={handleClick}>-</button>
+      <button className={styles.signbutton} onClick={handleClick}>-</button>
     </div>
   )
 }

@@ -4,7 +4,7 @@ function NegativeButton({ handleClick }) {
 
   return (
     <div className={styles.negativebutton}>
-      <button className={styles.button} onClick={handleClick}>+/-</button>
+      <button className={styles.bluebutton} onClick={handleClick}>+/-</button>
     </div>
   )
 }

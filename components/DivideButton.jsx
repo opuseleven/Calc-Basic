@@ -4,7 +4,7 @@ function DivideButton({ handleClick }) {
 
   return (
     <div className={styles.dividebutton}>
-      <button className={styles.button} onClick={handleClick}>/</button>
+      <button className={styles.signbutton} onClick={handleClick}>/</button>
     </div>
   )
 }

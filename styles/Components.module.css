@@ -15,6 +15,21 @@
   min-width: 10vw;
   width: inherit;
   min-height: 10vh;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.signbutton {
+  min-width: 10vw;
+  width: inherit;
+  min-height: 10vh;
+  background-color: #ffb300;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.signbutton:hover {
+  background-color: #fff85b;
 }
 
 .clearbuttoncontainer {
@@ -25,18 +40,39 @@
 .clearbutton {
   width: 20vw;
   height: 10vh;
+  background-color: #B94E48;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.clearbutton:hover {
+  background-color: #E15D44;
 }
 
 .negativebutton {
   grid-column: 3/4;
   grid-row: 1;
   background-color: inherit;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.bluebutton {
+  min-width: 10vw;
+  width: inherit;
+  min-height: 10vh;
+  background-color: #88c0d0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.bluebutton:hover {
+  background-color: #a5d8ff;
 }
 
 .dividebutton {
   grid-column: 4/5;
   grid-row: 1;
-  background-color: inherit;
 }
 
 .button7 {
@@ -131,4 +167,11 @@
 .equalsbutton {
   height: 10vh;
   width: 20vw;
+  background-color: #a3be8c;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.equalsbutton:hover {
+  background-color: #a9e34b;
 }
