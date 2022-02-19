@@ -4,7 +4,7 @@ function ViewScreen({ number }) {
 
   return (
     <div className={styles.viewscreen}>
-      <h2>
+      <h2 className={styles.viewednumberheader}>
         {number}
       </h2>
     </div>

@@ -3,6 +3,12 @@
   border-radius: 10px;
   border-color: black;
   margin: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.viewednumberheader {
+  margin-right: 10px;
 }
 
 .button {
