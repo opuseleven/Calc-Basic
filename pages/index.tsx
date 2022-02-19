@@ -23,12 +23,10 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Calc-Basic
-        </h1>
 
         <div className={styles.calculatorcontainer}>
 
+          <span className={styles.calclogo}>Calc-Basic</span>
           <ViewScreen number={viewedNumber}/>
 
           <div className={styles.buttonscontainer}>

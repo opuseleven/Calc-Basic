@@ -20,6 +20,14 @@
   flex-direction: column;
 }
 
+.calclogo {
+  font-size: 18px;
+  margin-top: 20px;
+  margin-left: 20px;
+  font-style: italic;
+  font-weight: bold;
+}
+
 .buttonscontainer {
   display: grid;
 }
