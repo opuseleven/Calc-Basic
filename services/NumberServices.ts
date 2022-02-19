@@ -1,19 +1,35 @@
 function handleNumberClick(viewedNumber: number, newNumber: number, negative: boolean,
-  setNegative: React.Dispatch<React.SetStateAction<boolean>>) {
+  decimal: boolean) {
 
   let returnedNumber: number = 0;
 
   if (viewedNumber === 0) {
     if (negative) {
-      returnedNumber = newNumber * -1;
+      if (decimal) {
+        returnedNumber = (newNumber * .1) * -1;
+      } else {
+        returnedNumber = newNumber * -1;
+      }
     } else {
-      returnedNumber = newNumber;
+      if (decimal) {
+        returnedNumber = (newNumber * .1);
+      } else {
+        returnedNumber = newNumber;
+      }
     }
   } else {
     if (negative) {
-      returnedNumber = (viewedNumber * 10) - newNumber;
+      if (decimal) {
+        returnedNumber = viewedNumber - (newNumber * .1);
+      } else {
+        returnedNumber = (viewedNumber * 10) - newNumber;
+      }
     } else {
-      returnedNumber = (viewedNumber * 10) + newNumber;
+      if (decimal) {
+        returnedNumber = viewedNumber + (newNumber * .1);
+      } else {
+        returnedNumber = (viewedNumber * 10) + newNumber;
+      }
     }
   }
   return returnedNumber;
