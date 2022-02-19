@@ -19,7 +19,7 @@ const Home: NextPage = () => {
       <Head>
         <title>Calc-Basic</title>
         <meta name="description" content="Basic calculator application" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/icon.ico" />
       </Head>
 
       <main className={styles.main}>
