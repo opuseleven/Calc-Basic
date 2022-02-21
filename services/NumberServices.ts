@@ -20,13 +20,21 @@ function handleNumberClick(viewedNumber: number, newNumber: number, negative: bo
   } else {
     if (negative) {
       if (decimal) {
-        returnedNumber = viewedNumber - (newNumber * .1);
+        if (viewedNumber % 1 === 0) {
+          returnedNumber = viewedNumber - (newNumber * .1);
+        } else {
+          returnedNumber = viewedNumber - (newNumber * .01);
+        }
       } else {
         returnedNumber = (viewedNumber * 10) - newNumber;
       }
     } else {
       if (decimal) {
-        returnedNumber = viewedNumber + (newNumber * .1);
+        if (viewedNumber % 1 === 0) {
+          returnedNumber = viewedNumber + (newNumber * .1);
+        } else {
+          returnedNumber = viewedNumber + (newNumber * .01);
+        }
       } else {
         returnedNumber = (viewedNumber * 10) + newNumber;
       }
