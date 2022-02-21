@@ -79,5 +79,20 @@ describe('Home', () => {
     expect(screen.getByRole('heading')).toHaveTextContent('1');
     fireEvent.click(screen.getByText('Clear'));
     expect(screen.getByRole('heading')).toHaveTextContent('0');
-  })
+  });
+
+  it('Decimal Button functions', () => {
+    render(<Home />);
+    fireEvent.click(screen.getByText('1'));
+    fireEvent.click(screen.getByText('.'));
+    fireEvent.click(screen.getByText('5'));
+    expect(screen.getByRole('heading')).toHaveTextContent('1.5');
+  });
+
+  it('Negative Button functions', () => {
+    render(<Home />);
+    fireEvent.click(screen.getByText('1'));
+    fireEvent.click(screen.getByText('+/-'));
+    expect(screen.getByRole('heading')).toHaveTextContent('-1');
+  });
 })
