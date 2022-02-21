@@ -3,43 +3,80 @@ import '@testing-library/jest-dom';
 import Home from '../pages/index';
 
 describe('Home', () => {
-  it('Renders calculator and buttons work', () => {
+
+  it('Renders calculator', () => {
     render(<Home />);
 
     const results = screen.getByRole('heading', {
       name: 0
     });
+  });
 
+  it('1 Button functions', () => {
+    render(<Home />);
     fireEvent.click(screen.getByText('1'));
     expect(screen.getByRole('heading')).toHaveTextContent('1');
+  });
 
+  it('2 Button functions', () => {
+    render(<Home />);
     fireEvent.click(screen.getByText('2'));
-    expect(screen.getByRole('heading')).toHaveTextContent('12');
+    expect(screen.getByRole('heading')).toHaveTextContent('2');
+  });
 
+  it('3 Button functions', () => {
+    render(<Home />);
     fireEvent.click(screen.getByText('3'));
-    expect(screen.getByRole('heading')).toHaveTextContent('123');
+    expect(screen.getByRole('heading')).toHaveTextContent('3');
+  });
 
+  it('4 Button functions', () => {
+    render(<Home />);
     fireEvent.click(screen.getByText('4'));
-    expect(screen.getByRole('heading')).toHaveTextContent('1234');
+    expect(screen.getByRole('heading')).toHaveTextContent('4');
+  });
 
+  it('5 Button functions', () => {
+    render(<Home />);
     fireEvent.click(screen.getByText('5'));
-    expect(screen.getByRole('heading')).toHaveTextContent('12345');
+    expect(screen.getByRole('heading')).toHaveTextContent('5');
+  });
 
+  it('6 Button functions', () => {
+    render(<Home />);
     fireEvent.click(screen.getByText('6'));
-    expect(screen.getByRole('heading')).toHaveTextContent('123456');
+    expect(screen.getByRole('heading')).toHaveTextContent('6');
+  });
 
+  it('7 Button functions', () => {
+    render(<Home />);
     fireEvent.click(screen.getByText('7'));
-    expect(screen.getByRole('heading')).toHaveTextContent('1234567');
+    expect(screen.getByRole('heading')).toHaveTextContent('7');
+  });
 
+  it('8 Button functions', () => {
+    render(<Home />);
     fireEvent.click(screen.getByText('8'));
-    expect(screen.getByRole('heading')).toHaveTextContent('12345678');
+    expect(screen.getByRole('heading')).toHaveTextContent('8');
+  });
 
+  it('9 Button functions', () => {
+    render(<Home />);
     fireEvent.click(screen.getByText('9'));
-    expect(screen.getByRole('heading')).toHaveTextContent('123456789');
+    expect(screen.getByRole('heading')).toHaveTextContent('9');
+  });
 
+  it('0 Button functions', () => {
+    render(<Home />);
+    fireEvent.click(screen.getByText('1'));
     fireEvent.click(screen.getByText('0'));
-    expect(screen.getByRole('heading')).toHaveTextContent('1234567890');
+    expect(screen.getByRole('heading')).toHaveTextContent('10');
+  });
 
+  it('Clear Button functions', () => {
+    render(<Home />);
+    fireEvent.click(screen.getByText('1'));
+    expect(screen.getByRole('heading')).toHaveTextContent('1');
     fireEvent.click(screen.getByText('Clear'));
     expect(screen.getByRole('heading')).toHaveTextContent('0');
   })
