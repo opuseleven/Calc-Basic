@@ -1,6 +1,10 @@
 import styles from '../styles/Components.module.css';
 
-function ZeroButton({ handleClick }) {
+interface ZeroButtonProps {
+  handleClick: VoidFunction
+}
+
+const ZeroButton: React.FC<ZeroButtonProps> = ({ handleClick }) => {
 
   return (
     <div className={styles.zerobutton}>

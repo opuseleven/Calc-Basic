@@ -1,6 +1,10 @@
 import styles from '../styles/Components.module.css';
 
-function NegativeButton({ handleClick }) {
+interface NegativeButtonProps {
+  handleClick: VoidFunction
+}
+
+const NegativeButton: React.FC<NegativeButtonProps> = ({ handleClick }) => {
 
   return (
     <div className={styles.negativebutton}>

@@ -1,6 +1,10 @@
 import styles from '../styles/Components.module.css';
 
-function ViewScreen({ number }) {
+interface ViewScreenProps {
+  number: number
+}
+
+const ViewScreen: React.FC<ViewScreenProps> = ({ number }) => {
 
   return (
     <div className={styles.viewscreen}>

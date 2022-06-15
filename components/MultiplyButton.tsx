@@ -1,6 +1,10 @@
 import styles from '../styles/Components.module.css';
 
-function MultiplyButton({ handleClick }) {
+interface MultiplyButtonProps {
+  handleClick: VoidFunction
+}
+
+const MultiplyButton: React.FC<MultiplyButtonProps> = ({ handleClick }) => {
 
   return (
     <div className={styles.multiplybutton}>

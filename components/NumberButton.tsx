@@ -1,6 +1,11 @@
 import styles from '../styles/Components.module.css';
 
-function NumberButton({ number, handleClick }) {
+interface NumberButtonProps {
+  number: number,
+  handleClick: VoidFunction
+}
+
+const NumberButton: React.FC<NumberButtonProps> = ({ number, handleClick }) => {
 
   const numberstring = String(number);
 

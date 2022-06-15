@@ -1,6 +1,10 @@
 import styles from '../styles/Components.module.css';
 
-function SubtractButton({ handleClick }) {
+interface SubtractButtonProps {
+  handleClick: VoidFunction
+}
+
+const SubtractButton: React.FC<SubtractButtonProps> = ({ handleClick }) => {
 
   return (
     <div className={styles.subtractbutton}>
