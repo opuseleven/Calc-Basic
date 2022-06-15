@@ -1,6 +1,10 @@
 import styles from '../styles/Components.module.css';
 
-function DivideButton({ handleClick }) {
+interface DivideButtonProps {
+  handleClick: VoidFunction
+}
+
+const DivideButton: React.FC<DivideButtonProps> = ({ handleClick }) => {
 
   return (
     <div className={styles.dividebutton}>

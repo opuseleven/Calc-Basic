@@ -1,6 +1,10 @@
 import styles from '../styles/Components.module.css';
 
-function DecimalButton({ handleClick }) {
+interface DecimalButtonProps {
+  handleClick: VoidFunction
+}
+
+const DecimalButton: React.FC<DecimalButtonProps> = ({ handleClick }) => {
 
   return (
     <div className={styles.decimalbutton}>

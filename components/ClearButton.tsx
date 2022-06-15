@@ -1,6 +1,10 @@
 import styles from '../styles/Components.module.css';
 
-function ClearButton({ handleClick }) {
+interface ClearButtonProps {
+  handleClick: VoidFunction
+}
+
+const ClearButton: React.FC<ClearButtonProps> = ({ handleClick }) => {
 
   return (
     <div className={styles.clearbuttoncontainer}>

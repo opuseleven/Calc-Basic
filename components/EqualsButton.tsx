@@ -1,6 +1,10 @@
 import styles from '../styles/Components.module.css';
 
-function EqualsButton({ handleClick }) {
+interface EqualsButtonProps {
+  handleClick: VoidFunction
+}
+
+const EqualsButton: React.FC<EqualsButtonProps> = ({ handleClick }) => {
 
   return (
     <div className={styles.equalsbuttoncontainer}>
