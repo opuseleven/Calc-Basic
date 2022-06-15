@@ -1,6 +1,10 @@
 import styles from '../styles/Components.module.css';
 
-function AddButton({ handleClick }) {
+interface AddButtonProps {
+  handleClick: VoidFunction
+}
+
+const AddButton: React.FC<AddButtonProps> = ({ handleClick }) => {
 
   return (
     <div className={styles.addbutton}>
