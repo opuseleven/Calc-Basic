@@ -1,14 +1,17 @@
 import styles from '../styles/Components.module.css';
 
 interface DivideButtonProps {
-  handleClick: VoidFunction
+  handleClick: VoidFunction,
+  sign: string
 }
 
-const DivideButton: React.FC<DivideButtonProps> = ({ handleClick }) => {
+const DivideButton: React.FC<DivideButtonProps> = ({ handleClick, sign }) => {
 
   return (
     <div className={styles.dividebutton}>
-      <button className={styles.signbutton} onClick={handleClick}>/</button>
+      <button className={sign === '/' ? styles.selectedsignbutton : styles.signbutton}
+        onClick={handleClick}
+      >/</button>
     </div>
   )
 }

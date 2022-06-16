@@ -1,14 +1,17 @@
 import styles from '../styles/Components.module.css';
 
 interface SubtractButtonProps {
-  handleClick: VoidFunction
+  handleClick: VoidFunction,
+  sign: string
 }
 
-const SubtractButton: React.FC<SubtractButtonProps> = ({ handleClick }) => {
+const SubtractButton: React.FC<SubtractButtonProps> = ({ handleClick, sign }) => {
 
   return (
     <div className={styles.subtractbutton}>
-      <button className={styles.signbutton} onClick={handleClick}>-</button>
+      <button className={sign === '-' ? styles.selectedsignbutton : styles.signbutton}
+        onClick={handleClick}
+      >-</button>
     </div>
   )
 }

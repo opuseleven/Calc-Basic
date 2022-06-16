@@ -1,14 +1,17 @@
 import styles from '../styles/Components.module.css';
 
 interface MultiplyButtonProps {
-  handleClick: VoidFunction
+  handleClick: VoidFunction,
+  sign: string
 }
 
-const MultiplyButton: React.FC<MultiplyButtonProps> = ({ handleClick }) => {
+const MultiplyButton: React.FC<MultiplyButtonProps> = ({ handleClick, sign }) => {
 
   return (
     <div className={styles.multiplybutton}>
-      <button className={styles.signbutton} onClick={handleClick}>x</button>
+      <button className={sign === '*' ? styles.selectedsignbutton : styles.signbutton}
+        onClick={handleClick}
+      >x</button>
     </div>
   )
 }
