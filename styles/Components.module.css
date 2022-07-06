@@ -5,38 +5,18 @@
   margin: 20px;
   display: flex;
   justify-content: flex-end;
+  background-color: #e5e9f0;
 }
 
 .viewednumberheader {
   margin-right: 10px;
+  color: black;
 }
 
 .button {
   min-width: 10vw;
   width: inherit;
   min-height: 10vh;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-.signbutton {
-  min-width: 10vw;
-  width: inherit;
-  min-height: 10vh;
-  background-color: #ffb300;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-.signbutton:hover {
-  background-color: #fff85b;
-}
-
-.selectedsignbutton {
-  min-width: 10vw;
-  width: inherit;
-  min-height: 10vh;
-  background-color: #e8590c;
   font-size: 16px;
   font-weight: bold;
 }
@@ -52,6 +32,7 @@
   background-color: #B94E48;
   font-size: 16px;
   font-weight: bold;
+  margin-left: 8px;
 }
 
 .clearbutton:hover {
@@ -64,30 +45,23 @@
   background-color: inherit;
   font-size: 16px;
   font-weight: bold;
-}
-
-.bluebutton {
   min-width: 10vw;
-  width: inherit;
   min-height: 10vh;
-  background-color: #88c0d0;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-.bluebutton:hover {
-  background-color: #a5d8ff;
 }
 
 .dividebutton {
   grid-column: 4/5;
   grid-row: 1;
+  min-width: 10vw;
+  min-height: 10vh;
+  margin-right: 8px;
 }
 
 .button7 {
   grid-column: 1/2;
   grid-row: 2;
   background-color: inherit;
+  margin-left: 8px;
 }
 
 .button8 {
@@ -106,12 +80,14 @@
   grid-column: 4/5;
   grid-row: 2;
   background-color: inherit;
+  margin-right: 8px;
 }
 
 .button4 {
   grid-column: 1/2;
   grid-row: 3;
   background-color: inherit;
+  margin-left: 8px;
 }
 
 .button5 {
@@ -130,12 +106,14 @@
   grid-column: 4/5;
   grid-row: 3;
   background-color: inherit;
+  margin-right: 8px;
 }
 
 .button1 {
   grid-column: 1/2;
   grid-row: 4;
   background-color: inherit;
+  margin-left: 8px;
 }
 
 .button2 {
@@ -160,12 +138,15 @@
   grid-column: 1/2;
   grid-row: 5;
   background-color: inherit;
+  margin-left: 8px;
+  margin-bottom: 8px;
 }
 
 .decimalbutton {
   grid-column: 2/3;
   grid-row: 5;
   background-color: inherit;
+  margin-bottom: 8px;
 }
 
 .equalsbuttoncontainer {
@@ -179,8 +160,43 @@
   background-color: #a3be8c;
   font-size: 16px;
   font-weight: bold;
+  margin-bottom: 8px;
 }
 
 .equalsbutton:hover {
   background-color: #a9e34b;
+}
+
+.signbutton {
+  min-width: 10vw;
+  width: inherit;
+  min-height: 10vh;
+  background-color: #ffb300;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.signbutton:hover {
+  background-color: #fff85b;
+}
+
+.selectedsignbutton {
+  min-width: 10vw;
+  width: inherit;
+  min-height: 10vh;
+  background-color: #e8590c;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.bluebutton {
+  min-width: 10vw;
+  min-height: 10vh;
+  background-color: #88c0d0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.bluebutton:hover {
+  background-color: #a5d8ff;
 }
