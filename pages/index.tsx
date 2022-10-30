@@ -22,7 +22,7 @@ const Home: NextPage = () => {
     <div className={styles.container}>
       <Head>
         <title>Calc-Basic</title>
-        <meta name="description" content="Basic calculator application" />
+        <meta name="description" content="Calc-Basic calculator application" />
         <link rel="icon" href="/icon.ico" />
       </Head>
 
