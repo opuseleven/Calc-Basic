@@ -43,8 +43,10 @@ const Home: NextPage = () => {
             <NegativeButton negative={negative} viewedNumber={viewedNumber}
               setNegative={setNegative} setViewedNumber={setViewedNumber} />
 
-            <DivideButton handleClick={() => handleSignClick(viewedNumber, storedNumber, sign, "/", setViewedNumber, setStoredNumber, setSign, setNegative, setDecimal)}
-              sign={sign} />
+            <DivideButton viewedNumber={viewedNumber} storedNumber={storedNumber}
+              sign={sign} setViewedNumber={setViewedNumber} setStoredNumber={setStoredNumber}
+              setSign={setSign} setNegative={setNegative} setDecimal={setDecimal} />
+
             <NumberButton number={7} handleClick={() => setViewedNumber(handleNumberClick(viewedNumber, 7, negative, decimal))} />
             <NumberButton number={8} handleClick={() => setViewedNumber(handleNumberClick(viewedNumber, 8, negative, decimal))} />
             <NumberButton number={9} handleClick={() => setViewedNumber(handleNumberClick(viewedNumber, 9, negative, decimal))} />
