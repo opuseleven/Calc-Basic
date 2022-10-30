@@ -26,11 +26,11 @@ describe('ClearButton Component', () => {
     decimal = bool;
   }
 
-  it('Renders', () => {
+  it('Component renders', () => {
     render(<ClearButton />);
     expect(screen.getByRole('button')).toHaveTextContent('Clear');
   })
-  it('Functions', () => {
+  it('Functions work', () => {
     viewedNumber = 1;
     handleClearClick(viewedNumber, sign, setViewedNumber, setStoredNumber, setSign, setNegative, setDecimal);
     expect(viewedNumber).toBe(0);
@@ -49,5 +49,15 @@ describe('ClearButton Component', () => {
     handleClearClick(viewedNumber, sign, setViewedNumber, setStoredNumber, setSign, setNegative, setDecimal);
     expect(negative).toBe(false);
     expect(decimal).toBe(false);
+  })
+  it('Component functions', () => {
+    setViewedNumber(4);
+    setNegative(true);
+    render(<ClearButton viewedNumber={viewedNumber} sign={sign} setViewedNumber={setViewedNumber}
+      setStoredNumber={setStoredNumber} setSign={setSign} setNegative={setNegative}
+      setDecimal={setDecimal} />);
+    fireEvent.click(screen.getByRole('button'));
+    expect(viewedNumber).toBe(0);
+    expect(negative).toBe(false);
   })
 })
