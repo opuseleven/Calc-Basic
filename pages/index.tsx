@@ -2,9 +2,13 @@ import Head from 'next/head';
 import type { NextPage } from 'next';
 import styles from '../styles/Home.module.css';
 import { useState } from 'react';
-import { ViewScreen, ClearButton, NegativeButton, DivideButton, NumberButton } from '../components';
-import { MultiplyButton, SubtractButton, AddButton, ZeroButton, DecimalButton, EqualsButton } from '../components';
-import { handleNumberClick, handleClearClick, handleSignClick, handleEqualsClick, handleNegativeClick, handleDecimalClick } from '../services';
+import {
+  ViewScreen, ClearButton, NegativeButton, DivideButton,
+  NumberButton, MultiplyButton, SubtractButton, AddButton,
+  ZeroButton, DecimalButton, EqualsButton } from '../components';
+import {
+  handleNumberClick, handleClearClick, handleSignClick, handleEqualsClick,
+  handleNegativeClick, handleDecimalClick } from '../services';
 
 const Home: NextPage = () => {
 
