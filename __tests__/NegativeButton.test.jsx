@@ -14,13 +14,14 @@ describe('Negative Button Component', () => {
     negative = bool;
   }
 
-  it('Renders', () => {
+  it('Component renders', () => {
     render(<NegativeButton />);
     expect(screen.getByRole('button')).toHaveTextContent('+/-');
   })
 
   it('Sets Negative bool', () => {
-    render(<NegativeButton handleClick={handleNegativeClick(negative, viewedNumber, setNegative, setViewedNumber)} />);
+    render(<NegativeButton negative={negative} viewedNumber={viewedNumber}
+      setNegative={setNegative} setViewedNumber={setViewedNumber} />);
     fireEvent.click(screen.getByText("+/-"));
     expect(negative).toBe(true);
   })
