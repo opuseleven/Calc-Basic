@@ -1,17 +1,35 @@
 import styles from '../styles/Components.module.css';
+import { handleSignClick } from '../services';
+import { FC, Dispatch, SetStateAction } from 'react';
 
 interface DivideButtonProps {
-  handleClick: VoidFunction,
-  sign: string
+  viewedNumber: number,
+  storedNumber: number,
+  sign: string,
+  setViewedNumber: Dispatch<SetStateAction<number>>,
+  setStoredNumber: Dispatch<SetStateAction<number>>,
+  setSign: Dispatch<SetStateAction<string>>,
+  setNegative: Dispatch<SetStateAction<boolean>>,
+  setDecimal: Dispatch<SetStateAction<boolean>>
 }
 
-const DivideButton: React.FC<DivideButtonProps> = ({ handleClick, sign }) => {
+const DivideButton: FC<DivideButtonProps> =
+  ({
+    viewedNumber, storedNumber, sign, setViewedNumber, setStoredNumber,
+    setSign, setNegative, setDecimal
+  }) => {
+
+  function handleClick() {
+    handleSignClick(viewedNumber, storedNumber, sign, "/", setViewedNumber, setStoredNumber, setSign, setNegative, setDecimal);
+  }
 
   return (
     <div className={styles.dividebutton}>
       <button className={sign === '/' ? styles.selectedsignbutton : styles.signbutton}
-        onClick={handleClick}
-      >/</button>
+        onClick={() => handleClick()}
+      >
+        /
+      </button>
     </div>
   )
 }
