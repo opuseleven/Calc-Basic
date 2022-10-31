@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, act } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { EqualsButton } from '../components';
 
@@ -39,7 +39,9 @@ describe('Equals Button Component', () => {
     render(<EqualsButton storedNumber={storedNumber} viewedNumber={viewedNumber}
       sign={sign} setSign={setSign} setStoredNumber={setStoredNumber} setViewedNumber={setViewedNumber}
       setNegative={setNegative} setDecimal={setDecimal} />);
-    fireEvent.click(screen.getByText('='));
+    act(() => {
+      fireEvent.click(screen.getByText('='));
+    })
     expect(viewedNumber).toBe(9);
     expect(storedNumber).toBe(0);
     expect(sign).toBe("");
@@ -51,7 +53,9 @@ describe('Equals Button Component', () => {
     render(<EqualsButton storedNumber={storedNumber} viewedNumber={viewedNumber}
       sign={sign} setSign={setSign} setStoredNumber={setStoredNumber} setViewedNumber={setViewedNumber}
       setNegative={setNegative} setDecimal={setDecimal} />);
-    fireEvent.click(screen.getByText('='));
+    act(() => {
+      fireEvent.click(screen.getByText('='));
+    })
     expect(viewedNumber).toBe(7);
     expect(sign).toBe("");
   })
@@ -64,7 +68,9 @@ describe('Equals Button Component', () => {
     render(<EqualsButton storedNumber={storedNumber} viewedNumber={viewedNumber}
       sign={sign} setSign={setSign} setStoredNumber={setStoredNumber} setViewedNumber={setViewedNumber}
       setNegative={setNegative} setDecimal={setDecimal} />);
-    fireEvent.click(screen.getByText('='));
+    act(() => {
+      fireEvent.click(screen.getByText('='));
+    })
     expect(viewedNumber).toBe(7);
     expect(negative).toBe(false);
     expect(decimal).toBe(false);
