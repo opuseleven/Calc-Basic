@@ -1,9 +1,11 @@
+import { Dispatch, SetStateAction } from 'react';
+
 function handleClearClick(viewedNumber: number, sign: string,
-  setViewedNumber: React.Dispatch<React.SetStateAction<number>>,
-  setStoredNumber: React.Dispatch<React.SetStateAction<number>>,
-  setSign: React.Dispatch<React.SetStateAction<string>>,
-  setNegative: React.Dispatch<React.SetStateAction<boolean>>,
-  setDecimal: React.Dispatch<React.SetStateAction<boolean>>) {
+  setViewedNumber: Dispatch<SetStateAction<number>>,
+  setStoredNumber: Dispatch<SetStateAction<number>>,
+  setSign: Dispatch<SetStateAction<string>>,
+  setNegative: Dispatch<SetStateAction<boolean>>,
+  setDecimal: Dispatch<SetStateAction<boolean>>) {
 
   if (viewedNumber !== 0) {
     setViewedNumber(0);
