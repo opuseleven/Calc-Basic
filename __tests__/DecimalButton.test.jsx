@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, act } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { DecimalButton } from '../components';
 
@@ -19,14 +19,18 @@ describe('Decimal Button Component', () => {
   it('Functions to set decimal var', () => {
     render(<DecimalButton viewedNumber={viewedNumber} decimal={decimal}
       setDecimal={setDecimal} />);
-    fireEvent.click(screen.getByText('.'));
+    act(() => {
+      fireEvent.click(screen.getByText('.'));
+    })
     expect(decimal).toBe(true);
   })
 
   it('Functions to set decimal var back', () => {
     render(<DecimalButton viewedNumber={viewedNumber} decimal={decimal}
       setDecimal={setDecimal} />);
-    fireEvent.click(screen.getByText('.'));
+    act(() => {
+      fireEvent.click(screen.getByText('.'));
+    })
     expect(decimal).toBe(false);
   })
 
@@ -35,7 +39,9 @@ describe('Decimal Button Component', () => {
     viewedNumber = 2.5;
     render(<DecimalButton viewedNumber={viewedNumber} decimal={decimal}
       setDecimal={setDecimal} />);
-    fireEvent.click(screen.getByText('.'));
+    act(() => {
+      fireEvent.click(screen.getByText('.'));
+    })
     expect(decimal).toBe(true);
   })
 
@@ -44,7 +50,9 @@ describe('Decimal Button Component', () => {
     viewedNumber = 2;
     render(<DecimalButton viewedNumber={viewedNumber} decimal={decimal}
       setDecimal={setDecimal} />);
+    act(() => {
       fireEvent.click(screen.getByText('.'));
+    })
     expect(decimal).toBe(false);
   })
 })
