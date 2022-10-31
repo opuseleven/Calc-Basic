@@ -1,7 +1,6 @@
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, fireEvent, screen, act } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { ClearButton } from '../components';
-import { handleClearClick } from '../services';
 
 describe('ClearButton Component', () => {
 
@@ -30,34 +29,43 @@ describe('ClearButton Component', () => {
     render(<ClearButton />);
     expect(screen.getByRole('button')).toHaveTextContent('Clear');
   })
-  it('Functions work', () => {
-    viewedNumber = 1;
-    handleClearClick(viewedNumber, sign, setViewedNumber, setStoredNumber, setSign, setNegative, setDecimal);
-    expect(viewedNumber).toBe(0);
 
-    sign = "+";
-    handleClearClick(viewedNumber, sign, setViewedNumber, setStoredNumber, setSign, setNegative, setDecimal);
-    expect(sign).toBe("");
-
-    storedNumber = 4;
-    handleClearClick(viewedNumber, sign, setViewedNumber, setStoredNumber, setSign, setNegative, setDecimal);
-    expect(storedNumber).toBe(0);
-  })
-  it('Clears Negative & Decimal booleans', () => {
-    negative = true;
-    decimal = true;
-    handleClearClick(viewedNumber, sign, setViewedNumber, setStoredNumber, setSign, setNegative, setDecimal);
+  it('Component clears Negative & Decimal booleans', () => {
+    setNegative(true);
+    setDecimal(true);
+    render(<ClearButton viewedNumber={viewedNumber} sign={sign} setViewedNumber={setViewedNumber}
+      setStoredNumber={setStoredNumber} setSign={setSign} setNegative={setNegative}
+      setDecimal={setDecimal} />);
+    act(() => {
+      fireEvent.click(screen.getByRole('button'));
+    })
     expect(negative).toBe(false);
     expect(decimal).toBe(false);
   })
+
   it('Component functions', () => {
     setViewedNumber(4);
     setNegative(true);
     render(<ClearButton viewedNumber={viewedNumber} sign={sign} setViewedNumber={setViewedNumber}
       setStoredNumber={setStoredNumber} setSign={setSign} setNegative={setNegative}
       setDecimal={setDecimal} />);
-    fireEvent.click(screen.getByRole('button'));
+    act(() => {
+      fireEvent.click(screen.getByRole('button'));
+    })
     expect(viewedNumber).toBe(0);
     expect(negative).toBe(false);
+  })
+  it('Component clears sign values', () => {
+    setSign('+');
+    setStoredNumber(9);
+    setViewedNumber(0);
+    render(<ClearButton viewedNumber={viewedNumber} sign={sign} setViewedNumber={setViewedNumber}
+      setStoredNumber={setStoredNumber} setSign={setSign} setNegative={setNegative}
+      setDecimal={setDecimal} />);
+    act(() => {
+      fireEvent.click(screen.getByRole('button'));
+    })
+    expect(sign).toBe('');
+    expect(storedNumber).toBe(9);
   })
 })
