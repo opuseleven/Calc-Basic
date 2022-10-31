@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, act } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { ZeroButton } from '../components';
 
@@ -20,7 +20,9 @@ describe('Zero Button Component', () => {
   it('Component functions to set viewedNumber', () => {
     render(<ZeroButton viewedNumber={viewedNumber} setViewedNumber={setViewedNumber}
       negative={negative} decimal={decimal} />);
-    fireEvent.click(screen.getByText('0'));
+    act(() => {
+      fireEvent.click(screen.getByText('0'));
+    })
     expect(viewedNumber).toBe(0);
   })
 
@@ -29,7 +31,9 @@ describe('Zero Button Component', () => {
     setViewedNumber(1);
     render(<ZeroButton viewedNumber={viewedNumber} setViewedNumber={setViewedNumber}
       negative={negative} decimal={decimal} />);
-    fireEvent.click(screen.getByText('0'));
+    act(() => {
+      fireEvent.click(screen.getByText('0'));
+    })
     expect(viewedNumber).toBe(1.0)
   })
 
@@ -39,7 +43,9 @@ describe('Zero Button Component', () => {
     setViewedNumber(0);
     render(<ZeroButton viewedNumber={viewedNumber} setViewedNumber={setViewedNumber}
       negative={negative} decimal={decimal} />);
-    fireEvent.click(screen.getByText('0'));
+    act(() => {
+      fireEvent.click(screen.getByText('0'));
+    })
     expect(viewedNumber).toBe(-0);
   })
 
@@ -49,7 +55,9 @@ describe('Zero Button Component', () => {
     decimal = true;
     render(<ZeroButton viewedNumber={viewedNumber} setViewedNumber={setViewedNumber}
       negative={negative} decimal={decimal} />);
-    fireEvent.click(screen.getByText('0'));
+    act(() => {
+      fireEvent.click(screen.getByText('0'));
+    })
     expect(viewedNumber).toBe(-0.0);
   })
 })
