@@ -1,6 +1,8 @@
 function handleClearClick(viewedNumber: number, sign: string,
-  setViewedNumber: React.Dispatch<React.SetStateAction<number>>, setStoredNumber: React.Dispatch<React.SetStateAction<number>>,
-  setSign: React.Dispatch<React.SetStateAction<string>>, setNegative: React.Dispatch<React.SetStateAction<boolean>>,
+  setViewedNumber: React.Dispatch<React.SetStateAction<number>>,
+  setStoredNumber: React.Dispatch<React.SetStateAction<number>>,
+  setSign: React.Dispatch<React.SetStateAction<string>>,
+  setNegative: React.Dispatch<React.SetStateAction<boolean>>,
   setDecimal: React.Dispatch<React.SetStateAction<boolean>>) {
 
   if (viewedNumber !== 0) {
