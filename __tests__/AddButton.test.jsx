@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, act } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { AddButton } from '../components';
 
@@ -34,7 +34,9 @@ describe('Add Button Component', () => {
     render(<AddButton viewedNumber={viewedNumber} storedNumber={storedNumber}
       sign={sign} setViewedNumber={setViewedNumber} setStoredNumber={setStoredNumber}
       setSign={setSign} setNegative={setNegative} setDecimal={setDecimal} />);
-    fireEvent.click(screen.getByText('+'));
+    act(() => {
+      fireEvent.click(screen.getByText('+'));
+    })
     expect(sign).toBe('+');
   })
 
@@ -44,7 +46,9 @@ describe('Add Button Component', () => {
     render(<AddButton viewedNumber={viewedNumber} storedNumber={storedNumber}
       sign={sign} setViewedNumber={setViewedNumber} setStoredNumber={setStoredNumber}
       setSign={setSign} setNegative={setNegative} setDecimal={setDecimal} />);
-    fireEvent.click(screen.getByText('+'));
+    act(() => {
+      fireEvent.click(screen.getByText('+'));
+    })
     expect(sign).toBe('+');
     expect(storedNumber).toBe(7);
     expect(viewedNumber).toBe(0);
