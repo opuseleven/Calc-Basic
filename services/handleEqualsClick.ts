@@ -1,8 +1,10 @@
 import { evaluate } from '.';
+import { Dispatch, SetStateAction } from 'react';
 
-function handleEqualsClick(storedNumber: number, viewedNumber: number, sign: string, setSign: React.Dispatch<React.SetStateAction<string>>,
-  setStoredNumber: React.Dispatch<React.SetStateAction<number>>, setViewedNumber: React.Dispatch<React.SetStateAction<number>>,
-  setNegative: React.Dispatch<React.SetStateAction<boolean>>, setDecimal: React.Dispatch<React.SetStateAction<boolean>>) {
+function handleEqualsClick(storedNumber: number, viewedNumber: number, sign: string,
+  setSign: Dispatch<SetStateAction<string>>, setStoredNumber: Dispatch<SetStateAction<number>>,
+  setViewedNumber: Dispatch<SetStateAction<number>>, setNegative: Dispatch<SetStateAction<boolean>>,
+  setDecimal: Dispatch<SetStateAction<boolean>>) {
 
   let total: number;
 
