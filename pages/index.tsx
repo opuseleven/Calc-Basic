@@ -47,19 +47,27 @@ const Home: NextPage = () => {
               sign={sign} setViewedNumber={setViewedNumber} setStoredNumber={setStoredNumber}
               setSign={setSign} setNegative={setNegative} setDecimal={setDecimal} />
 
-            <NumberButton number={7} handleClick={() => setViewedNumber(handleNumberClick(viewedNumber, 7, negative, decimal))} />
-            <NumberButton number={8} handleClick={() => setViewedNumber(handleNumberClick(viewedNumber, 8, negative, decimal))} />
-            <NumberButton number={9} handleClick={() => setViewedNumber(handleNumberClick(viewedNumber, 9, negative, decimal))} />
+            <NumberButton number={7} viewedNumber={viewedNumber} setViewedNumber={setViewedNumber}
+              negative={negative} decimal={decimal} />
+
+            <NumberButton number={8} viewedNumber={viewedNumber} setViewedNumber={setViewedNumber}
+              negative={negative} decimal={decimal} />
+
+            <NumberButton number={9} viewedNumber={viewedNumber} setViewedNumber={setViewedNumber}
+              negative={negative} decimal={decimal} />
+
             <MultiplyButton handleClick={() => handleSignClick(viewedNumber, storedNumber, sign, "*", setViewedNumber, setStoredNumber, setSign, setNegative, setDecimal)}
               sign={sign} />
-            <NumberButton number={4} handleClick={() => setViewedNumber(handleNumberClick(viewedNumber, 4, negative, decimal))} />
-            <NumberButton number={5} handleClick={() => setViewedNumber(handleNumberClick(viewedNumber, 5, negative, decimal))} />
-            <NumberButton number={6} handleClick={() => setViewedNumber(handleNumberClick(viewedNumber, 6, negative, decimal))} />
+            <NumberButton number={4} viewedNumber={viewedNumber} setViewedNumber={setViewedNumber} negative={negative} decimal={decimal} />
+            <NumberButton number={5} viewedNumber={viewedNumber} setViewedNumber={setViewedNumber} negative={negative} decimal={decimal} />
+            <NumberButton number={6} viewedNumber={viewedNumber} setViewedNumber={setViewedNumber} negative={negative} decimal={decimal} />
             <SubtractButton handleClick={() => handleSignClick(viewedNumber, storedNumber, sign, "-", setViewedNumber, setStoredNumber, setSign, setNegative, setDecimal)}
               sign={sign} />
-            <NumberButton number={1} handleClick={() => setViewedNumber(handleNumberClick(viewedNumber, 1, negative, decimal))} />
-            <NumberButton number={2} handleClick={() => setViewedNumber(handleNumberClick(viewedNumber, 2, negative, decimal))} />
-            <NumberButton number={3} handleClick={() => setViewedNumber(handleNumberClick(viewedNumber, 3, negative, decimal))} />
+
+            <NumberButton number={1} viewedNumber={viewedNumber} setViewedNumber={setViewedNumber} negative={negative} decimal={decimal} />
+            <NumberButton number={2} viewedNumber={viewedNumber} setViewedNumber={setViewedNumber} negative={negative} decimal={decimal} />
+            <NumberButton number={3} viewedNumber={viewedNumber} setViewedNumber={setViewedNumber} negative={negative} decimal={decimal} />
+
             <AddButton handleClick={() => handleSignClick(viewedNumber, storedNumber, sign, "+", setViewedNumber, setStoredNumber, setSign, setNegative, setDecimal)}
               sign={sign} />
             <ZeroButton handleClick={() => setViewedNumber(handleNumberClick(viewedNumber, 0, negative, decimal))} />
