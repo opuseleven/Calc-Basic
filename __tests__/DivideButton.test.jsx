@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, act } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { DivideButton } from '../components';
 
@@ -30,14 +30,33 @@ describe('Divide Button Component', () => {
       setDecimal={setDecimal} />);
     expect(screen.getByRole('button')).toHaveTextContent('/');
   })
-  
-  it('Component functions', () => {
+
+  it('Component functions to set sign var', () => {
     render(<DivideButton viewedNumber={viewedNumber} storedNumber={storedNumber}
       sign={sign} setSign={setSign} setViewedNumber={setViewedNumber}
       setStoredNumber={setStoredNumber} setNegative={setNegative}
       setDecimal={setDecimal} />);
     expect(screen.getByRole('button')).toHaveTextContent('/');
-    fireEvent.click(screen.getByText('/'));
+    act(() => {
+      fireEvent.click(screen.getByText('/'));
+    })
     expect(sign).toBe('/');
+  })
+
+  it('Component functions to store viewed number, and set viewedNumber to 0', () => {
+    setStoredNumber(0);
+    setViewedNumber(8);
+    setSign('');
+    render(<DivideButton viewedNumber={viewedNumber} storedNumber={storedNumber}
+      sign={sign} setSign={setSign} setViewedNumber={setViewedNumber}
+      setStoredNumber={setStoredNumber} setNegative={setNegative}
+      setDecimal={setDecimal} />);
+    expect(screen.getByRole('button')).toHaveTextContent('/');
+    act(() => {
+      fireEvent.click(screen.getByText('/'));
+    })
+    expect(sign).toBe('/');
+    expect(storedNumber).toBe(8);
+    expect(viewedNumber).toBe(0);
   })
 })
