@@ -6,9 +6,6 @@ import {
   ViewScreen, ClearButton, NegativeButton, DivideButton,
   NumberButton, MultiplyButton, SubtractButton, AddButton,
   ZeroButton, DecimalButton, EqualsButton } from '../components';
-import {
-  handleEqualsClick,
-  handleDecimalClick } from '../services';
 
 const Home: NextPage = () => {
 
@@ -91,8 +88,12 @@ const Home: NextPage = () => {
 
             <DecimalButton viewedNumber={viewedNumber} decimal={decimal}
               setDecimal={setDecimal} />
-              
-            <EqualsButton handleClick={() => handleEqualsClick(storedNumber, viewedNumber, sign, setSign, setStoredNumber, setViewedNumber, setNegative, setDecimal)} />
+
+            <EqualsButton storedNumber={storedNumber} viewedNumber={viewedNumber}
+              sign={sign} setSign={setSign} setStoredNumber={setStoredNumber}
+              setViewedNumber={setViewedNumber} setNegative={setNegative}
+              setDecimal={setDecimal} />
+
           </div>
         </div>
       </main>
