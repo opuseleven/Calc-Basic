@@ -1,6 +1,6 @@
 export * from './handleNumberClick';
 export * from './handleClearClick';
-export * from './SignClick';
+export * from './handleSignClick';
 export * from './Evaluate';
 export * from './handleEqualsClick';
 export * from './handleNegativeClick';
