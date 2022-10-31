@@ -1,7 +1,6 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { EqualsButton } from '../components';
-import { handleEqualsClick } from '../services';
 
 describe('Equals Button Component', () => {
 
@@ -27,34 +26,45 @@ describe('Equals Button Component', () => {
   }
 
   it('Renders', () => {
-    render(<EqualsButton />);
+    render(<EqualsButton storedNumber={storedNumber} viewedNumber={viewedNumber}
+      sign={sign} setSign={setSign} setStoredNumber={setStoredNumber} setViewedNumber={setViewedNumber}
+      setNegative={setNegative} setDecimal={setDecimal} />);
     expect(screen.getByRole('button')).toHaveTextContent('=');
   })
 
-  it('Passes data to evaluate()', () => {
-    storedNumber = 5;
-    sign = "+";
-    viewedNumber = 4;
-    handleEqualsClick(storedNumber, viewedNumber, sign, setSign, setStoredNumber, setViewedNumber, setNegative, setDecimal);
+  it('Functions to pass data to evaluate()', () => {
+    setStoredNumber(5);
+    setSign("+");
+    setViewedNumber(4);
+    render(<EqualsButton storedNumber={storedNumber} viewedNumber={viewedNumber}
+      sign={sign} setSign={setSign} setStoredNumber={setStoredNumber} setViewedNumber={setViewedNumber}
+      setNegative={setNegative} setDecimal={setDecimal} />);
+    fireEvent.click(screen.getByText('='));
     expect(viewedNumber).toBe(9);
     expect(storedNumber).toBe(0);
     expect(sign).toBe("");
   })
 
-  it('Checks for sign', () => {
-    viewedNumber = 7;
-    sign = "";
-    handleEqualsClick(storedNumber, viewedNumber, sign, setSign, setStoredNumber, setViewedNumber, setNegative, setDecimal);
+  it('Functions to check for sign', () => {
+    setViewedNumber(7);
+    setSign("");
+    render(<EqualsButton storedNumber={storedNumber} viewedNumber={viewedNumber}
+      sign={sign} setSign={setSign} setStoredNumber={setStoredNumber} setViewedNumber={setViewedNumber}
+      setNegative={setNegative} setDecimal={setDecimal} />);
+    fireEvent.click(screen.getByText('='));
     expect(viewedNumber).toBe(7);
     expect(sign).toBe("");
   })
 
-  it('Handles edge cases', () => {
-    viewedNumber = 7;
-    sign = "";
-    negative = true;
-    decimal = true;
-    handleEqualsClick(storedNumber, viewedNumber, sign, setSign, setStoredNumber, setViewedNumber, setNegative, setDecimal);
+  it('Functions to handle edge cases', () => {
+    setViewedNumber(7);
+    setSign("");
+    setNegative(true);
+    setDecimal(true);
+    render(<EqualsButton storedNumber={storedNumber} viewedNumber={viewedNumber}
+      sign={sign} setSign={setSign} setStoredNumber={setStoredNumber} setViewedNumber={setViewedNumber}
+      setNegative={setNegative} setDecimal={setDecimal} />);
+    fireEvent.click(screen.getByText('='));
     expect(viewedNumber).toBe(7);
     expect(negative).toBe(false);
     expect(decimal).toBe(false);
