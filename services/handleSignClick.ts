@@ -1,9 +1,10 @@
 import { evaluate } from '.';
+import { Dispatch, SetStateAction } from 'react';
 
-function handleSignClick(viewedNumber: number, storedNumber: number, sign: string, newSign: string,
-  setViewedNumber: React.Dispatch<React.SetStateAction<number>>, setStoredNumber: React.Dispatch<React.SetStateAction<number>>,
-  setSign: React.Dispatch<React.SetStateAction<string>>, setNegative: React.Dispatch<React.SetStateAction<boolean>>,
-  setDecimal: React.Dispatch<React.SetStateAction<boolean>>) {
+function handleSignClick(viewedNumber: number, storedNumber: number, sign: string,
+  newSign: string, setViewedNumber: Dispatch<SetStateAction<number>>,
+  setStoredNumber: Dispatch<SetStateAction<number>>, setSign: Dispatch<SetStateAction<string>>,
+  setNegative: Dispatch<SetStateAction<boolean>>, setDecimal: Dispatch<SetStateAction<boolean>>) {
 
   if (sign.length > 0) {
     setStoredNumber(evaluate(storedNumber, sign, viewedNumber))
