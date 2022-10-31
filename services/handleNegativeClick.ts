@@ -1,5 +1,8 @@
-function handleNegativeClick(negative: boolean, viewedNumber: number, setNegative: React.Dispatch<React.SetStateAction<boolean>>,
-  setViewedNumber: React.Dispatch<React.SetStateAction<number>>) {
+import { Dispatch, SetStateAction } from 'react';
+
+function handleNegativeClick(negative: boolean, viewedNumber: number,
+  setNegative: Dispatch<SetStateAction<boolean>>, setViewedNumber: Dispatch<SetStateAction<number>>) {
+
   if (viewedNumber === 0) {
     setNegative(!negative);
   } else {
