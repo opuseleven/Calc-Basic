@@ -1,5 +1,5 @@
 export * from './NumberServices';
-export * from './ClearButton';
+export * from './handleClearClick';
 export * from './SignClick';
 export * from './Evaluate';
 export * from './EqualsClick';
