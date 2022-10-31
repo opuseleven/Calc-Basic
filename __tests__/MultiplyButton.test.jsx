@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, act } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { MultiplyButton } from '../components';
 
@@ -34,12 +34,14 @@ describe('Multiply Button Component', () => {
     render(<MultiplyButton viewedNumber={viewedNumber} setViewedNumber={setViewedNumber}
       storedNumber={storedNumber} setStoredNumber={setStoredNumber} sign={sign}
       setSign={setSign} setNegative={setNegative} setDecimal={setDecimal} />);
-    fireEvent.click(screen.getByText('x'));
+    act(() => {
+      fireEvent.click(screen.getByText('x'));
+    })
     expect(storedNumber).toBe(8);
     expect(sign).toBe('*');
     expect(viewedNumber).toBe(0);
   })
-  
+
   it('Component functions to store viewed number, and set viewedNumber to 0', () => {
     setSign('');
     setViewedNumber(7);
@@ -47,7 +49,9 @@ describe('Multiply Button Component', () => {
     render(<MultiplyButton viewedNumber={viewedNumber} setViewedNumber={setViewedNumber}
       storedNumber={storedNumber} setStoredNumber={setStoredNumber} sign={sign}
       setSign={setSign} setNegative={setNegative} setDecimal={setDecimal} />);
-    fireEvent.click(screen.getByText('x'));
+    act(() => {
+      fireEvent.click(screen.getByText('x'));
+    })
     expect(storedNumber).toBe(7);
     expect(sign).toBe('*');
     expect(viewedNumber).toBe(0);
