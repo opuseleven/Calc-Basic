@@ -1,5 +1,5 @@
-function handleNumberClick(viewedNumber: number, newNumber: number, negative: boolean,
-  decimal: boolean) {
+function handleNumberClick(viewedNumber: number, newNumber: number,
+  negative: boolean, decimal: boolean) {
 
   let returnedNumber: number = 0;
 
