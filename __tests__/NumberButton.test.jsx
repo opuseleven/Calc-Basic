@@ -16,12 +16,14 @@ describe('Number Button Component', () => {
       negative={negative} decimal={decimal} />);
     expect(screen.getByRole('button')).toHaveTextContent('7');
   })
+
   it('Component functions to set viewedNumber', () => {
     render(<NumberButton number={4} viewedNumber={viewedNumber} setViewedNumber={setViewedNumber}
       negative={negative} decimal={decimal} />);
     fireEvent.click(screen.getByText('4'));
     expect(viewedNumber).toBe(4);
   })
+
   it('Sets viewed number if decimal=true', () => {
     decimal = true;
     setViewedNumber(0);
@@ -30,6 +32,7 @@ describe('Number Button Component', () => {
     fireEvent.click(screen.getByText('5'));
     expect(viewedNumber).toBe(.5)
   })
+
   it('Sets viewedNumber if negative=true', () => {
     decimal = false;
     negative = true;
@@ -39,6 +42,7 @@ describe('Number Button Component', () => {
     fireEvent.click(screen.getByText('2'));
     expect(viewedNumber).toBe(-2);
   })
+  
   it('Sets viewedNumber if both negative&decimal=true', () => {
     setViewedNumber(0);
     negative = true;

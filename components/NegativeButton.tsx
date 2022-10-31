@@ -18,9 +18,11 @@ const NegativeButton: FC<NegativeButtonProps> =
 
   return (
     <div className={styles.negativebutton}>
+
       <button className={styles.bluebutton} onClick={() => handleClick()}>
         +/-
       </button>
+      
     </div>
   )
 }

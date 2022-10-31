@@ -30,6 +30,7 @@ describe('Divide Button Component', () => {
       setDecimal={setDecimal} />);
     expect(screen.getByRole('button')).toHaveTextContent('/');
   })
+  
   it('Component functions', () => {
     render(<DivideButton viewedNumber={viewedNumber} storedNumber={storedNumber}
       sign={sign} setSign={setSign} setViewedNumber={setViewedNumber}
