@@ -89,7 +89,9 @@ const Home: NextPage = () => {
             <ZeroButton viewedNumber={viewedNumber} negative={negative}
               decimal={decimal} setViewedNumber={setViewedNumber} />
 
-            <DecimalButton handleClick={() => handleDecimalClick(viewedNumber, decimal, setDecimal)} />
+            <DecimalButton viewedNumber={viewedNumber} decimal={decimal}
+              setDecimal={setDecimal} />
+              
             <EqualsButton handleClick={() => handleEqualsClick(storedNumber, viewedNumber, sign, setSign, setStoredNumber, setViewedNumber, setNegative, setDecimal)} />
           </div>
         </div>
