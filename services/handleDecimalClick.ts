@@ -1,4 +1,8 @@
-function handleDecimalClick(viewedNumber: number, decimal: boolean, setDecimal: React.Dispatch<React.SetStateAction<boolean>>) {
+import { Dispatch, SetStateAction } from 'react';
+
+function handleDecimalClick(viewedNumber: number, decimal: boolean,
+  setDecimal: Dispatch<SetStateAction<boolean>>) {
+
   if (!decimal) {
     setDecimal(true);
   } else {
