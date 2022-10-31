@@ -1,7 +1,6 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { DecimalButton } from '../components';
-import { handleDecimalClick } from '../services';
 
 describe('Decimal Button Component', () => {
 
@@ -11,24 +10,41 @@ describe('Decimal Button Component', () => {
     decimal = bool;
   }
 
-  it('Renders', () => {
-    render(<DecimalButton />);
+  it('Comonent renders', () => {
+    render(<DecimalButton viewedNumber={viewedNumber} decimal={decimal}
+      setDecimal={setDecimal} />);
     expect(screen.getByRole('button')).toHaveTextContent('.');
   })
 
-  it('Set Decimal function', () => {
-    handleDecimalClick(viewedNumber, decimal, setDecimal);
+  it('Functions to set decimal var', () => {
+    render(<DecimalButton viewedNumber={viewedNumber} decimal={decimal}
+      setDecimal={setDecimal} />);
+    fireEvent.click(screen.getByText('.'));
     expect(decimal).toBe(true);
-    handleDecimalClick(viewedNumber, decimal, setDecimal);
+  })
+
+  it('Functions to set decimal var back', () => {
+    render(<DecimalButton viewedNumber={viewedNumber} decimal={decimal}
+      setDecimal={setDecimal} />);
+    fireEvent.click(screen.getByText('.'));
     expect(decimal).toBe(false);
   })
-  it('Edge Case', () => {
+
+  it('Handles edge cases', () => {
     decimal = true;
     viewedNumber = 2.5;
-    handleDecimalClick(viewedNumber, decimal, setDecimal);
+    render(<DecimalButton viewedNumber={viewedNumber} decimal={decimal}
+      setDecimal={setDecimal} />);
+    fireEvent.click(screen.getByText('.'));
     expect(decimal).toBe(true);
+  })
+
+  it('Handles additional edge case', () => {
+    decimal = true;
     viewedNumber = 2;
-    handleDecimalClick(viewedNumber, decimal, setDecimal);
+    render(<DecimalButton viewedNumber={viewedNumber} decimal={decimal}
+      setDecimal={setDecimal} />);
+      fireEvent.click(screen.getByText('.'));
     expect(decimal).toBe(false);
   })
 })
