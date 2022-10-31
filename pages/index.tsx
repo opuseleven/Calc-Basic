@@ -56,11 +56,19 @@ const Home: NextPage = () => {
             <NumberButton number={9} viewedNumber={viewedNumber} setViewedNumber={setViewedNumber}
               negative={negative} decimal={decimal} />
 
-            <MultiplyButton handleClick={() => handleSignClick(viewedNumber, storedNumber, sign, "*", setViewedNumber, setStoredNumber, setSign, setNegative, setDecimal)}
-              sign={sign} />
-            <NumberButton number={4} viewedNumber={viewedNumber} setViewedNumber={setViewedNumber} negative={negative} decimal={decimal} />
-            <NumberButton number={5} viewedNumber={viewedNumber} setViewedNumber={setViewedNumber} negative={negative} decimal={decimal} />
-            <NumberButton number={6} viewedNumber={viewedNumber} setViewedNumber={setViewedNumber} negative={negative} decimal={decimal} />
+            <MultiplyButton viewedNumber={viewedNumber} storedNumber={storedNumber}
+              sign={sign} setViewedNumber={setViewedNumber} setStoredNumber={setStoredNumber}
+              setSign={setSign} setNegative={setNegative} setDecimal={setDecimal} />
+
+            <NumberButton number={4} viewedNumber={viewedNumber} setViewedNumber={setViewedNumber}
+              negative={negative} decimal={decimal} />
+
+            <NumberButton number={5} viewedNumber={viewedNumber} setViewedNumber={setViewedNumber}
+              negative={negative} decimal={decimal} />
+
+            <NumberButton number={6} viewedNumber={viewedNumber} setViewedNumber={setViewedNumber}
+              negative={negative} decimal={decimal} />
+
             <SubtractButton handleClick={() => handleSignClick(viewedNumber, storedNumber, sign, "-", setViewedNumber, setStoredNumber, setSign, setNegative, setDecimal)}
               sign={sign} />
 
