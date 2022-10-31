@@ -7,7 +7,7 @@ import {
   NumberButton, MultiplyButton, SubtractButton, AddButton,
   ZeroButton, DecimalButton, EqualsButton } from '../components';
 import {
-  handleNumberClick, handleEqualsClick,
+  handleEqualsClick,
   handleDecimalClick } from '../services';
 
 const Home: NextPage = () => {
@@ -86,7 +86,9 @@ const Home: NextPage = () => {
               sign={sign} setViewedNumber={setViewedNumber} setStoredNumber={setStoredNumber}
               setSign={setSign} setNegative={setNegative} setDecimal={setDecimal} />
 
-            <ZeroButton handleClick={() => setViewedNumber(handleNumberClick(viewedNumber, 0, negative, decimal))} />
+            <ZeroButton viewedNumber={viewedNumber} negative={negative}
+              decimal={decimal} setViewedNumber={setViewedNumber} />
+
             <DecimalButton handleClick={() => handleDecimalClick(viewedNumber, decimal, setDecimal)} />
             <EqualsButton handleClick={() => handleEqualsClick(storedNumber, viewedNumber, sign, setSign, setStoredNumber, setViewedNumber, setNegative, setDecimal)} />
           </div>
