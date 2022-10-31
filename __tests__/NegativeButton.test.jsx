@@ -1,7 +1,6 @@
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, fireEvent, screen, act } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { NegativeButton } from '../components';
-import { handleNegativeClick } from '../services';
 
 describe('Negative Button Component', () => {
 
@@ -22,14 +21,21 @@ describe('Negative Button Component', () => {
   it('Sets Negative bool', () => {
     render(<NegativeButton negative={negative} viewedNumber={viewedNumber}
       setNegative={setNegative} setViewedNumber={setViewedNumber} />);
-    fireEvent.click(screen.getByText("+/-"));
+    act(() => {
+      fireEvent.click(screen.getByText("+/-"));
+    })
     expect(negative).toBe(true);
   })
 
-  it('Sets value of viewed Number to negative', () => {
-    viewedNumber = 3;
-    negative = false;
-    handleNegativeClick(negative, viewedNumber, setNegative, setViewedNumber);
-    expect(viewedNumber).toBe(-3);
+  it('Sets negative viewedNumber back to positive', () => {
+    setNegative(false);
+    setViewedNumber(-4);
+    render(<NegativeButton negative={negative} viewedNumber={viewedNumber}
+      setNegative={setNegative} setViewedNumber={setViewedNumber} />);
+    act(() => {
+      fireEvent.click(screen.getByText("+/-"));
+    })
+    expect(negative).toBe(false);
+    expect(viewedNumber).toBe(4);
   })
 })
