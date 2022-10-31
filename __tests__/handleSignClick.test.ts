@@ -3,23 +3,23 @@ import { handleSignClick } from '../services';
 describe('handleSignClick function', () => {
 
   let viewedNumber = 0;
-  function setViewedNumber(n) {
+  function setViewedNumber(n: number) {
     viewedNumber = n;
   }
   let storedNumber = 0;
-  function setStoredNumber(n) {
+  function setStoredNumber(n: number) {
     storedNumber = n;
   }
   let sign = "";
-  function setSign(s) {
+  function setSign(s: string) {
     sign = s;
   }
   let decimal = false;
-  function setDecimal(bool) {
+  function setDecimal(bool: boolean) {
     decimal = bool;
   }
   let negative = false;
-  function setNegative(bool) {
+  function setNegative(bool: boolean) {
     negative = bool;
   }
 
