@@ -14,6 +14,26 @@ describe('Number Services', () => {
     expect(testNumber).toBe(24);
   })
 
+  it('Adds a third number', () => {
+    testNumber = handleNumberClick(22, 3, false, false);
+    expect(testNumber).toBe(223);
+  })
+
+  it('Adds a fourth number', () => {
+    testNumber = handleNumberClick(223, 8, false, false);
+    expect(testNumber).toBe(2238);
+  })
+
+  it('Adds a fifth number', () => {
+    testNumber = handleNumberClick(2238, 4, false, false);
+    expect(testNumber).toBe(22384);
+  })
+
+  it('Adds a sixth number', () => {
+    testNumber = handleNumberClick(22384, 7, false, false);
+    expect(testNumber).toBe(223847);
+  })
+
   it('Adds a negative number to replace 0', () => {
     testNumber = handleNumberClick(0, 2, true, false);
     expect(testNumber).toBe(-2);
