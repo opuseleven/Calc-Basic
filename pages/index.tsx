@@ -7,7 +7,7 @@ import {
   NumberButton, MultiplyButton, SubtractButton, AddButton,
   ZeroButton, DecimalButton, EqualsButton } from '../components';
 import {
-  handleNumberClick, handleSignClick, handleEqualsClick,
+  handleNumberClick, handleEqualsClick,
   handleDecimalClick } from '../services';
 
 const Home: NextPage = () => {
@@ -73,12 +73,19 @@ const Home: NextPage = () => {
               sign={sign} setViewedNumber={setViewedNumber} setStoredNumber={setStoredNumber}
               setSign={setSign} setNegative={setNegative} setDecimal={setDecimal} />
 
-            <NumberButton number={1} viewedNumber={viewedNumber} setViewedNumber={setViewedNumber} negative={negative} decimal={decimal} />
-            <NumberButton number={2} viewedNumber={viewedNumber} setViewedNumber={setViewedNumber} negative={negative} decimal={decimal} />
-            <NumberButton number={3} viewedNumber={viewedNumber} setViewedNumber={setViewedNumber} negative={negative} decimal={decimal} />
+            <NumberButton number={1} viewedNumber={viewedNumber} setViewedNumber={setViewedNumber}
+              negative={negative} decimal={decimal} />
 
-            <AddButton handleClick={() => handleSignClick(viewedNumber, storedNumber, sign, "+", setViewedNumber, setStoredNumber, setSign, setNegative, setDecimal)}
-              sign={sign} />
+            <NumberButton number={2} viewedNumber={viewedNumber} setViewedNumber={setViewedNumber}
+              negative={negative} decimal={decimal} />
+
+            <NumberButton number={3} viewedNumber={viewedNumber} setViewedNumber={setViewedNumber}
+              negative={negative} decimal={decimal} />
+
+            <AddButton viewedNumber={viewedNumber} storedNumber={storedNumber}
+              sign={sign} setViewedNumber={setViewedNumber} setStoredNumber={setStoredNumber}
+              setSign={setSign} setNegative={setNegative} setDecimal={setDecimal} />
+
             <ZeroButton handleClick={() => setViewedNumber(handleNumberClick(viewedNumber, 0, negative, decimal))} />
             <DecimalButton handleClick={() => handleDecimalClick(viewedNumber, decimal, setDecimal)} />
             <EqualsButton handleClick={() => handleEqualsClick(storedNumber, viewedNumber, sign, setSign, setStoredNumber, setViewedNumber, setNegative, setDecimal)} />
