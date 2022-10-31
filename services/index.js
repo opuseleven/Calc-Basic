@@ -1,4 +1,4 @@
-export * from './NumberServices';
+export * from './handleNumberClick';
 export * from './handleClearClick';
 export * from './SignClick';
 export * from './Evaluate';
