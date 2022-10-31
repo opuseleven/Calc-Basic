@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, act } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { NumberButton } from '../components';
 
@@ -20,7 +20,9 @@ describe('Number Button Component', () => {
   it('Component functions to set viewedNumber', () => {
     render(<NumberButton number={4} viewedNumber={viewedNumber} setViewedNumber={setViewedNumber}
       negative={negative} decimal={decimal} />);
-    fireEvent.click(screen.getByText('4'));
+    act(() => {
+      fireEvent.click(screen.getByText('4'));
+    })
     expect(viewedNumber).toBe(4);
   })
 
@@ -29,7 +31,9 @@ describe('Number Button Component', () => {
     setViewedNumber(0);
     render(<NumberButton number={5} viewedNumber={viewedNumber} setViewedNumber={setViewedNumber}
       negative={negative} decimal={decimal} />);
-    fireEvent.click(screen.getByText('5'));
+    act(() => {
+      fireEvent.click(screen.getByText('5'));
+    })
     expect(viewedNumber).toBe(.5)
   })
 
@@ -39,17 +43,21 @@ describe('Number Button Component', () => {
     setViewedNumber(0);
     render(<NumberButton number={2} viewedNumber={viewedNumber} setViewedNumber={setViewedNumber}
       negative={negative} decimal={decimal} />);
-    fireEvent.click(screen.getByText('2'));
+    act(() => {
+      fireEvent.click(screen.getByText('2'));
+    })
     expect(viewedNumber).toBe(-2);
   })
-  
+
   it('Sets viewedNumber if both negative&decimal=true', () => {
     setViewedNumber(0);
     negative = true;
     decimal = true;
     render(<NumberButton number={8} viewedNumber={viewedNumber} setViewedNumber={setViewedNumber}
       negative={negative} decimal={decimal} />);
-    fireEvent.click(screen.getByText('8'));
+    act(() => {
+      fireEvent.click(screen.getByText('8'));
+    })
     expect(viewedNumber).toBe(-0.8);
   })
 })
