@@ -6,13 +6,13 @@ function handleNumberClick(viewedNumber: number, newNumber: number,
   if (viewedNumber === 0) {
     if (negative) {
       if (decimal) {
-        returnedNumber = (newNumber * .1) * -1;
+        returnedNumber = Number(((newNumber * .1) * -1).toFixed(1));
       } else {
         returnedNumber = newNumber * -1;
       }
     } else {
       if (decimal) {
-        returnedNumber = (newNumber * .1);
+        returnedNumber = Number((newNumber * .1).toFixed(1));
       } else {
         returnedNumber = newNumber;
       }
