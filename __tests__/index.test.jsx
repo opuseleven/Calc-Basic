@@ -206,4 +206,33 @@ describe('Home', () => {
     })
     expect(screen.getByRole('heading')).toHaveTextContent('21');
   })
+
+  it('Found a bug with decimal subtraction?', () => {
+    render(<Home />);
+    act(() => {
+      fireEvent.click(screen.getByText('5'));
+    })
+    expect(screen.getByRole('heading')).toHaveTextContent('5')
+    act(() => {
+      fireEvent.click(screen.getByText('.'));
+    })
+    act(() => {
+      fireEvent.click(screen.getByText('3'));
+    })
+    expect(screen.getByRole('heading')).toHaveTextContent('5.3');
+    act(() => {
+      fireEvent.click(screen.getByText('-'));
+    })
+    act(() => {
+      fireEvent.click(screen.getByText('.'));
+    })
+    act(() => {
+      fireEvent.click(screen.getByText('3'));
+    })
+    expect(screen.getByRole('heading')).toHaveTextContent('0.3');
+    act(() => {
+      fireEvent.click(screen.getByText('='));
+    })
+    expect(screen.getByRole('heading')).toHaveTextContent('5');
+  })
 })
