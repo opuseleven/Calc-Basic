@@ -58,6 +58,6 @@ describe('Zero Button Component', () => {
     act(() => {
       fireEvent.click(screen.getByText('0'));
     })
-    expect(viewedNumber).toBe(-0.0);
+    expect(viewedNumber).toBe(0);
   })
 })
