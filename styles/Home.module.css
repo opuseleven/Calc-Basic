@@ -10,7 +10,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: orange;
 }
 
 .calculatorcontainer {
@@ -22,6 +21,7 @@
   min-width: 32vw;
   max-width: 44vw;
   padding: 4px;
+  background-color: orange;
 }
 
 .calclogo {
