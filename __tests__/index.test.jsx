@@ -235,4 +235,55 @@ describe('Home', () => {
     })
     expect(screen.getByRole('heading')).toHaveTextContent('5');
   })
+
+  it('Another bug with decimal', () => {
+    render(<Home />);
+    act(() => {
+      fireEvent.click(screen.getByText('.'));
+    })
+    act(() => {
+      fireEvent.click(screen.getByText('1'));
+    })
+    act(() => {
+      fireEvent.click(screen.getByText('5'));
+    })
+    expect(screen.getByRole('heading')).toHaveTextContent('0.15');
+  })
+
+  it('Decimal works with three digits', () => {
+    render(<Home />);
+    act(() => {
+      fireEvent.click(screen.getByText('.'));
+    })
+    act(() => {
+      fireEvent.click(screen.getByText('1'));
+    })
+    act(() => {
+      fireEvent.click(screen.getByText('2'));
+    })
+    act(() => {
+      fireEvent.click(screen.getByText('3'));
+    })
+    expect(screen.getByRole('heading')).toHaveTextContent('.123');
+  })
+
+  it('Decimal works with four digits', () => {
+    render(<Home />);
+    act(() => {
+      fireEvent.click(screen.getByText('.'));
+    })
+    act(() => {
+      fireEvent.click(screen.getByText('1'));
+    })
+    act(() => {
+      fireEvent.click(screen.getByText('2'));
+    })
+    act(() => {
+      fireEvent.click(screen.getByText('3'));
+    })
+    act(() => {
+      fireEvent.click(screen.getByText('4'));
+    })
+    expect(screen.getByRole('heading')).toHaveTextContent('.1234');
+  })
 })
