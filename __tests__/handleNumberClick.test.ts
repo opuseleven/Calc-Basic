@@ -44,6 +44,11 @@ describe('Number Services', () => {
     expect(testNumber).toBe(-22);
   })
 
+  it('Adds a third number to a negative number', () => {
+    testNumber = handleNumberClick(-22, 4, true, false);
+    expect(testNumber).toBe(-224);
+  })
+
   it('Adds a decimal number to replace 0', () => {
     testNumber = handleNumberClick(0, 2, false, true);
     expect(testNumber).toBe(.2);
@@ -54,9 +59,24 @@ describe('Number Services', () => {
     expect(testNumber).toBe(.22);
   })
 
+  it('Adds a third clicked number to a decimal number', () => {
+    testNumber = handleNumberClick(.12, 3, false, true);
+    expect(testNumber).toBe(.123);
+  })
+
+  it('Adds a fourth clicked number to a decimal number', () => {
+    testNumber = handleNumberClick(.123, 4, false, true);
+    expect(testNumber).toBe(.1234);
+  })
+
   it('Adds a second clicked number to the first non-decimal number', () => {
     testNumber = handleNumberClick(1, 5, false, true);
     expect(testNumber).toBe(1.5);
+  })
+
+  it('Adds third clicked number to new decimal number', () => {
+    testNumber = handleNumberClick(1.5, 7, false, true);
+    expect(testNumber).toBe(1.57);
   })
 
   it('Adds a negative decimal number to replace 0', () => {
@@ -67,6 +87,15 @@ describe('Number Services', () => {
   it('Adds a second clicked number to the first negative decimal number', () => {
     testNumber = handleNumberClick(-.2, 2, true, true);
     expect(testNumber).toBe(-.22);
+  })
+
+  it('Adds a third clicked number to the first negative decimal number', () => {
+    testNumber = handleNumberClick(-.22, 2, true, true);
+    expect(testNumber).toBe(-.222);
+  })
+  it('Adds a fourth negative decimal number', () => {
+    testNumber = handleNumberClick(-.222, 5, true, true);
+    expect(testNumber).toBe(.2225);
   })
 
   it('Adds a second clicked number to the first negative non-decimal number', () => {
@@ -82,5 +111,10 @@ describe('Number Services', () => {
   it('Does not break with additional negative decimal places', () => {
     testNumber = handleNumberClick(-1.2, 5, true, true);
     expect(testNumber).toBe(-1.25);
+  })
+
+  it('Does not break with third negative decimal place', () => {
+    testNumber = handleNumberClick(-1.25, 7, true, true);
+    expect(testNumber).toBe(-1.257);
   })
 })
