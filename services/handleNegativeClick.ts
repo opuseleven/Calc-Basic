@@ -8,6 +8,7 @@ function handleNegativeClick(negative: boolean, viewedNumber: number,
   } else {
     const newValue: number = viewedNumber * -1;
     setViewedNumber(newValue);
+    setNegative(!negative);
   }
 }
 export { handleNegativeClick };
