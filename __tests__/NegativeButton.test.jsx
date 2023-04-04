@@ -28,7 +28,7 @@ describe('Negative Button Component', () => {
   })
 
   it('Sets negative viewedNumber back to positive', () => {
-    setNegative(false);
+    setNegative(true);
     setViewedNumber(-4);
     render(<NegativeButton negative={negative} viewedNumber={viewedNumber}
       setNegative={setNegative} setViewedNumber={setViewedNumber} />);
