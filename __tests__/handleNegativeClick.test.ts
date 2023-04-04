@@ -16,12 +16,14 @@ describe('handleNegativeClick service', () => {
     negative = false;
     handleNegativeClick(negative, viewedNumber, setNegative, setViewedNumber);
     expect(viewedNumber).toBe(-3);
+    expect(negative).toBe(true);
   })
-  
+
   it('Sets negative value of viewedNumber back to positive', () => {
     viewedNumber = -4;
-    negative = false;
+    negative = true;
     handleNegativeClick(negative, viewedNumber, setNegative, setViewedNumber);
     expect(viewedNumber).toBe(4);
+    expect(negative).toBe(false);
   })
 })
