@@ -1,4 +1,4 @@
-function handleNumberClick(viewedNumber: number, newNumber: number,
+export function handleNumberClick(viewedNumber: number, newNumber: number,
   negative: boolean, decimal: boolean) {
 
   let returnedNumber: number = 0;
@@ -23,7 +23,12 @@ function handleNumberClick(viewedNumber: number, newNumber: number,
         if (viewedNumber % 1 === 0) {
           returnedNumber = viewedNumber - (newNumber * .1);
         } else {
-          returnedNumber = viewedNumber - (newNumber * .01);
+          const decimals = countDecimals(viewedNumber);
+          const exponent = decimals + 1;
+          const denom = Math.pow(10, exponent);
+          const addedNumber = newNumber * (1 / denom);
+          returnedNumber = viewedNumber - addedNumber;
+          returnedNumber = Number(returnedNumber.toFixed(decimals + 2));
         }
       } else {
         returnedNumber = (viewedNumber * 10) - newNumber;
@@ -33,7 +38,12 @@ function handleNumberClick(viewedNumber: number, newNumber: number,
         if (viewedNumber % 1 === 0) {
           returnedNumber = viewedNumber + (newNumber * .1);
         } else {
-          returnedNumber = viewedNumber + (newNumber * .01);
+          const decimals = countDecimals(viewedNumber);
+          const exponent = decimals + 1;
+          const denom = Math.pow(10, exponent);
+          const addedNumber = newNumber * (1 / denom);
+          returnedNumber = viewedNumber + addedNumber;
+          returnedNumber = Number(returnedNumber.toFixed(decimals + 2));
         }
       } else {
         returnedNumber = (viewedNumber * 10) + newNumber;
@@ -42,4 +52,17 @@ function handleNumberClick(viewedNumber: number, newNumber: number,
   }
   return returnedNumber;
 }
-export { handleNumberClick };
+
+
+function countDecimals(num: number) {
+  const strValue = num.toString();
+  if (strValue.indexOf('e-') > -1) {
+    let [base, trail] = strValue.split('e-');
+    let deg = parseInt(trail, 10);
+    return deg;
+  }
+  if (Math.floor(num) !== num) {
+    return num.toString().split(".")[1].length || 0;
+  }
+  return 0;
+}
