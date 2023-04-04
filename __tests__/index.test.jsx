@@ -286,4 +286,21 @@ describe('Home', () => {
     })
     expect(screen.getByRole('heading')).toHaveTextContent('.1234');
   })
+
+  it('Edge case test', () => {
+    render(<Home />);
+    act(() => {
+      fireEvent.click(screen.getByText('9'));
+    })
+    act(() => {
+      fireEvent.click(screen.getByText('+/-'));
+    })
+    act(() => {
+      fireEvent.click(screen.getByText('.'));
+    })
+    act(() => {
+      fireEvent.click(screen.getByText('3'));
+    })
+    expect(screen.getByRole('heading')).toHaveTextContent('-9.3');
+  })
 })

@@ -119,6 +119,11 @@ describe('Number Services', () => {
     expect(testNumber).toBe(-234.1378);
   })
 
+  it('Edge negative decimal test', () => {
+    testNumber = handleNumberClick(-9, 3, true, true);
+    expect(testNumber).toBe(-9.3);
+  })
+
   it('Adds a second clicked number to the first negative non-decimal number', () => {
     testNumber = handleNumberClick(-2, 2, true, true);
     expect(testNumber).toBe(-2.2);
