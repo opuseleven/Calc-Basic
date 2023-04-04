@@ -69,6 +69,16 @@ describe('Number Services', () => {
     expect(testNumber).toBe(.1234);
   })
 
+  it('Adds a fifth clicked number to decimal number', () => {
+    testNumber = handleNumberClick(.1234, 5, false, true);
+    expect(testNumber).toBe(.12345);
+  })
+
+  it('Additional decimal test', () => {
+    testNumber = handleNumberClick(234.137, 8, false, true);
+    expect(testNumber).toBe(234.1378);
+  })
+
   it('Adds a second clicked number to the first non-decimal number', () => {
     testNumber = handleNumberClick(1, 5, false, true);
     expect(testNumber).toBe(1.5);
@@ -93,9 +103,20 @@ describe('Number Services', () => {
     testNumber = handleNumberClick(-.22, 2, true, true);
     expect(testNumber).toBe(-.222);
   })
+
   it('Adds a fourth negative decimal number', () => {
     testNumber = handleNumberClick(-.222, 5, true, true);
-    expect(testNumber).toBe(.2225);
+    expect(testNumber).toBe(-.2225);
+  })
+
+  it('Adds a fifth negative decimal number', () => {
+    testNumber = handleNumberClick(-.2225, 7, true, true);
+    expect(testNumber).toBe(-.22257);
+  })
+
+  it('Additional negative decimal test', () => {
+    testNumber = handleNumberClick(-234.137, 8, true, true);
+    expect(testNumber).toBe(-234.1378);
   })
 
   it('Adds a second clicked number to the first negative non-decimal number', () => {
