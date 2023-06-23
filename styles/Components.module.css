@@ -14,11 +14,13 @@
 }
 
 .button {
-  min-width: 10vw;
-  width: inherit;
+  width: 100%;
   min-height: 10vh;
   font-size: 16px;
   font-weight: bold;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .clearbuttoncontainer {
@@ -27,7 +29,7 @@
 }
 
 .clearbutton {
-  width: 20vw;
+  width: 100%;
   height: 10vh;
   background-color: #B94E48;
   font-size: 16px;
@@ -60,19 +62,22 @@
 .button7 {
   grid-column: 1/2;
   grid-row: 2;
-  background-color: inherit;
+  min-width: 10vw;
+  min-height: 10vh;
   margin-left: 8px;
 }
 
 .button8 {
   grid-column: 2/3;
   grid-row: 2;
+  min-width: 10vw;
   background-color: inherit;
 }
 
 .button9 {
   grid-column: 3/4;
   grid-row: 2;
+  min-width: 10vw;
   background-color: inherit;
 }
 
@@ -80,12 +85,14 @@
   grid-column: 4/5;
   grid-row: 2;
   background-color: inherit;
+  min-width: 10vw;
   margin-right: 8px;
 }
 
 .button4 {
   grid-column: 1/2;
   grid-row: 3;
+  min-width: 10vw;
   background-color: inherit;
   margin-left: 8px;
 }
@@ -93,18 +100,21 @@
 .button5 {
   grid-column: 2/3;
   grid-row: 3;
+  min-width: 10vw;
   background-color: inherit;
 }
 
 .button6 {
   grid-column: 3/4;
   grid-row: 3;
+  min-width: 10vw;
   background-color: inherit;
 }
 
 .subtractbutton {
   grid-column: 4/5;
   grid-row: 3;
+  min-width: 10vw;
   background-color: inherit;
   margin-right: 8px;
 }
@@ -112,6 +122,7 @@
 .button1 {
   grid-column: 1/2;
   grid-row: 4;
+  min-width: 10vw;
   background-color: inherit;
   margin-left: 8px;
 }
@@ -119,24 +130,29 @@
 .button2 {
   grid-column: 2/3;
   grid-row: 4;
+  min-width: 10vw;
   background-color: inherit;
 }
 
 .button3 {
   grid-column: 3/4;
   grid-row: 4;
+  min-width: 10vw;
   background-color: inherit;
 }
 
 .addbutton {
   grid-column: 4/5;
   grid-row: 4;
+  min-width: 10vw;
   background-color: inherit;
+  margin-right: 8px;
 }
 
 .zerobutton {
   grid-column: 1/2;
   grid-row: 5;
+  min-width: 10vw;
   background-color: inherit;
   margin-left: 8px;
   margin-bottom: 8px;
@@ -145,6 +161,7 @@
 .decimalbutton {
   grid-column: 2/3;
   grid-row: 5;
+  min-width: 10vw;
   background-color: inherit;
   margin-bottom: 8px;
 }
@@ -152,11 +169,12 @@
 .equalsbuttoncontainer {
   grid-column: 3/5;
   grid-row: 5;
+  margin-right: 8px;
 }
 
 .equalsbutton {
   height: 10vh;
-  width: 20vw;
+  width: 100%;
   background-color: #a3be8c;
   font-size: 16px;
   font-weight: bold;
@@ -168,8 +186,7 @@
 }
 
 .signbutton {
-  min-width: 10vw;
-  width: inherit;
+  width: 100%;
   min-height: 10vh;
   background-color: #ffb300;
   font-size: 16px;
@@ -181,8 +198,7 @@
 }
 
 .selectedsignbutton {
-  min-width: 10vw;
-  width: inherit;
+  width: 100%;
   min-height: 10vh;
   background-color: #e8590c;
   font-size: 16px;
@@ -190,7 +206,7 @@
 }
 
 .bluebutton {
-  min-width: 10vw;
+  width: 100%;
   min-height: 10vh;
   background-color: #88c0d0;
   font-size: 16px;
