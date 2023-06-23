@@ -19,7 +19,7 @@ const DecimalButton: FC<DecimalButtonProps> =
     <div className={styles.decimalbutton}>
 
       <button className={styles.bluebutton} onClick={() => handleClick()}>
-        .
+         . 
       </button>
 
     </div>
